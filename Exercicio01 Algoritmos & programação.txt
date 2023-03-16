@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+
+int main(){
+//Questao 01
+
+printf("Digite um valor: \n");
+int valA1;
+scanf("%d", &valA1);
+
+printf(" O Valor digitado foi: %d\n", valA1);
+
+
+
+//Questao 02
+printf("Digite um valor: \n");
+float valA2, quadradoA2;
+scanf("%f", &valA2);
+quadradoA2= valA2*valA2;
+printf("O quadrado do numero eh: %f\n", quadradoA2);
+
+
+
+// Questao 03
+
+int numproduto;
+float valproduto, valorfinal;
+
+printf("Digite a quantidade e o valor do produto: \n");
+scanf("%d", &numproduto);
+scanf("%f", &valproduto);
+valorfinal = valproduto*numproduto;
+
+printf("O valor final eh: %f\n", valorfinal);
+
+
+// Questao 04
+
+int valA4, valB4, AB4;
+
+printf("Digite os valores para serem somados: \n");
+scanf ("%d", &valA4);
+scanf ("%d", &valB4);
+AB4= valA4 + valB4;
+
+printf("A soma dos valores eh: %d\n", AB4);
+
+
+// Questao 05
+
+int valA5, valB5, valC5, valmedia;
+printf ("Digite suas notas: \n");
+scanf("%d", &valA5);
+scanf("%d", &valB5);
+scanf("%d", &valC5);
+valmedia= (valA5+valB5+valC5)/3;
+printf("A media das suas notas eh: %d\n", valmedia);
+
+
+
+
+}

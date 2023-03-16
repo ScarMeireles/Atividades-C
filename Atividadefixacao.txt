@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+//Atividade 1
+int main()
+{ 
+
+int valA1=20,valB1;
+
+valA1=20;
+valB1=30;
+printf ("Valor da soma: %d \n", valA1 + valB1);
+
+
+
+//Atividade 2
+
+
+int valA2, valB2;
+
+valA2=30;
+valB2=10;
+
+
+printf ("Valor da subtracao: %d \n", valA2 - valB2);
+
+
+//Atividade 3
+
+
+int valA3, valB3;
+
+valA3=2;
+valB3=40;
+
+printf ("Valor da multiplicacao: %d \n", valA3 * valB3);
+
+
+
+//Atividade 4
+
+
+int valA4;
+
+valA4=10;
+
+valA4++;
+valA4++;
+valA4++;
+valA4++;
+valA4++;
+
+printf ("Valor da incrementacao: %d \n", valA4);
+
+
+
+//Atividade 5
+
+int valA5;
+
+valA5= 8;
+
+valA5--;
+valA5--;
+
+printf ("Valor da Decrementacao: %d \n", valA5);
+
+
+//Atividade 6
+
+
+float valA6, valB6, valC6, totalmedia;
+
+valA6=90;
+valB6=60;
+valC6=70;
+totalmedia= valA6+valB6+valC6;
+
+printf ("Valor da media: %f \n", totalmedia /3);
+
+
+
+}

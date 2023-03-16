@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+//Questao 01
+//01- Escreva um programa que calcule e mostre a área de um trapézio. Sabe-se que: A = ((base maior + base menor)* altura)/2 ;
+
+float area, basemaior, basemenor, altura;
+
+printf ("Digite o valor da base maior, menor e da altura do trapezio:\n\n");
+
+scanf("%f", &basemaior);
+scanf("%f", &basemenor);
+scanf("%f", &altura);
+
+area= ((basemaior + basemenor)*altura)/2;
+
+printf("O valor da Area eh: %f\n\n", area);
+
+//Questao 02
+//02- Escreva um algoritmo que leia uma temperatura na escala Celsius (C)  e imprima o equivalente em Fahrenheit (F).
+//Dados: (Fórmula de conversão: F = 9/5 * C + 32)
+
+int C, F;
+
+printf("Digite a temperatura em Celcius: \n\n");
+
+scanf("%d", &C);
+
+F = 9/5 * C + 32;
+
+printf("O valor da temperatura em Fahrenheit eh: %d\n\n", F);
+
+
+//Questao 03
+//03- Escreva um algoritmo para calcular o consumo médio de um automóvel (medido em Km/l), dado que são conhecidos a distância total percorrida e o
+//volume de combustível consumido para percorrê-la (medido em litros). CM = DIST / VOL.
+int consumoMedio, distanciaTotal, volCombustivel;
+
+printf ("Digite a distancia percorrida e o volume de combustivel consumido: \n\n");
+
+scanf ("%d", &distanciaTotal);
+scanf ("%d", &volCombustivel);
+
+consumoMedio = distanciaTotal / volCombustivel;
+
+printf("O consumo medio de combustivel eh: %d\n\n", consumoMedio);
+
+
+//Questao 04
+//04- O custo ao consumidor de um carro novo é a soma do custo de fábrica com a porcentagem do distribuidor e dos impostos,
+//ambos aplicados ao custo de fábrica. Supondo que a porcentagem do distribuidor seja de 12% e a dos impostos de 45%,
+//prepare um algoritmo para ler o custo de fábrica do carro e imprimir o valor pago a distribuidora, o valor dos impostos e o custo total ao consumidor.
+
+
+float custoFabrica, valDistribuidora, valImposto, custoFinal, porcDistr, porcImposto;
+
+printf("Digite o custo de custo de Fabrica \n");
+
+scanf("%f", &custoFabrica);
+
+porcDistr = 0.12;
+porcImposto = 0.45;
+
+valDistribuidora = custoFabrica * porcDistr;
+valImposto = custoFabrica * porcImposto;
+custoFinal = custoFabrica + valDistribuidora + valImposto;
+
+printf("O valor pago para a Distribuidora eh: %.2f\n", valDistribuidora );
+printf("O valor do Imposto eh: %.2f\n", valImposto );
+printf("O valor de Final eh: %.2f\n", custoFinal );
+
+
+}

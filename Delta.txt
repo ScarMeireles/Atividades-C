@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+int valA, valB, valC;
+float delta;
+printf("Digite o valor de a, b e c \n");
+scanf("%d", &valA);
+scanf("%d", &valB);
+scanf("%d", &valC);
+delta= valB*valB - 4*valA*valC;
+printf("O resultado de Delta eh: %f\n", delta);
+
+}
