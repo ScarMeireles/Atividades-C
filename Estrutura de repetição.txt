@@ -1,0 +1,114 @@
+#include <stdio.h>
+
+int main()
+{
+
+// 01) Faça um programa que leia 5 números e informe o número
+//maior.
+
+int valA1, maior, i;
+printf("Digite 5 numeros e informarei o maior deles.\n");
+printf("Entre com o primeiro valor\n");
+scanf("%d", &maior);
+
+	for (i = 1; i < 5; i++) {
+	printf("Entre com o proximo valor: \n");
+	scanf("%d", &valA1);
+
+		if (valA1 > maior){
+		maior = valA1;
+		}
+	}
+
+printf("O valor %d eh o maior!\n\n", maior);
+
+
+
+// 02) Faça um programa que leia 5 números e informe a soma e a
+//média dos números.
+
+
+int valA2, soma;
+float media;
+soma = 0;
+printf("Digite 5 numeros e informarei a soma e a media deles.\n");
+printf("Digite os numeros:\n");
+	for (i = 0; i <5; i++){
+	scanf("%d", &valA2);
+	soma += valA2;
+	}
+
+media = soma/5;
+
+printf("A soma dos numeros eh: %d\n", soma);
+printf("A media dos numeros eh: %.2f\n\n", media);
+
+
+
+//03)Faça um programa que peça 10 números inteiros, calcule e
+//mostre a quantidade de números pares e a quantidade de
+//números impares.
+
+
+int num3, par3=0, impar3=0;
+printf("Informe 10 numeros inteiros e mostrarei a quantidade de numeros pares e impares\n\n");
+
+	for (i = 0; i <10; i++){
+	printf("Digite um numero\n");
+	scanf("%d", &num3);
+
+		if(num3%2==0){
+		par3 ++;
+		}
+		
+			else{
+			impar3++;
+			}
+}
+	printf("No total, foram:\n");
+	printf("%d numeros pares\n", par3);
+	printf("%d numeros impares\n\n", impar3);
+
+
+
+//04) Faça um programa que leia 10 nomes de frutas e informe a
+//mensagem “Achei banana” quando a fruta for banana.
+
+
+char fruta[10];
+printf("Informe o nome de 10 frutas e direi quando encontrar 'banana' entre elas(digite minusculo).\n");
+printf("Informe uma fruta\n");
+
+for (i=0; i<10; i++){
+	scanf("%s", &fruta);
+	
+	if (strcmp(fruta, "banana") == 0){
+		printf("Achei banana!\n\n");
+		break;
+	}
+		else if(i==9){
+		printf("Nao encontrei 'banana'\n\n");
+		}
+}
+
+
+
+
+//5) Faça um programa que leia 10 nomes de animais e informe a
+//mensagem “Achei cavalo” quando o nome do animal for cavalo.
+char animal[20];
+printf("Informe o nome de 10 animais e direi quando encontrar 'cavalo' entre eles(digite minusculo).\n");
+printf("Informe um animal\n");
+
+for (i=0; i<10; i++){
+	scanf("%s", &animal);
+	
+		if (strcmp(animal, "cavalo") == 0){
+			printf("Achei cavalo!\n\n");
+			break;
+		}
+			else if(i==9){
+			printf("Nao encontrei 'cavalo'\n\n");
+			}
+	}
+}
