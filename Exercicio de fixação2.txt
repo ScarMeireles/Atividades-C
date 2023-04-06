@@ -1,0 +1,99 @@
+#include <stdio.h>
+int main()
+{ 
+
+//01) Faca um programa que leia 7 numeros e informe o numero menor.
+
+int valA1, i, menor1;
+
+printf("Digite 7 numeros e irei informar qual eh o menor\n");
+printf("Digite o primeiro numero:\n");
+scanf("%d", &menor1);
+
+
+	printf("Digite os proximos numeros:\n");
+		for(i=0; i<6; i++){
+		scanf("%d", &valA1);
+		
+			if(valA1 < menor1){
+				menor1 = valA1;
+			}
+	}
+printf("O menor valor digitado foi: %d\n\n", menor1);
+
+
+
+//02) Faca um programa que leia 4 numeros e informe o dobro do maior numero.
+
+int valA2, maior2, dobro;
+
+printf("Digite 4 numeros e irei informar qual eh o dobro do maior\n");
+printf("Digite os numeros:\n");
+scanf("%d", &maior2);
+
+		for(i=0; i<3; i++){
+		scanf("%d", &valA2);
+		
+			if(valA2 > maior2){
+				maior2 = valA2;
+			}
+	}
+	dobro = maior2*2;
+printf("O dobro do maior valor digitado eh: %d\n\n", dobro);
+
+
+
+//03) Faca um programa que leia 8 numeros e informe a soma dos numeros pares.
+
+int valA3, soma3 = 0;
+printf("Digite 8 numeros e vou informar a soma dos numeros pares: \n");
+
+	for (i=0; i<8; i++){
+	scanf("%d", &valA3);
+		if(valA3 %2 == 0){
+			soma3 = soma3 + valA3;
+		}
+}
+
+printf("A soma dos numeros pares eh: %d\n\n", soma3);
+
+
+
+
+
+//04) Faca um programa que leia 6 numeros e informe a soma dos numeros impares.
+
+int valA4, soma4 = 0;
+printf("Digite 6 numeros e vou informar a soma dos numeros impares: \n");
+
+	for (i=0; i<6; i++){
+	scanf("%d", &valA4);
+		if(valA4 %2 != 0){
+			soma4 = soma4 + valA4;
+		}
+
+}
+
+printf("A soma dos numeros impares eh: %d\n\n", soma4);
+
+
+
+//05) Faca um programa que leia 10 numeros, encontre o numero maior e some com 10.
+
+int valA5, maior5, soma5;
+
+printf("Digite 10 numeros e irei informar a soma do maior +10\n");
+scanf("%d", &maior5);
+
+	for(i=0; i<9; i++){
+	scanf("%d", &valA5);
+		
+		if(valA5 > maior5){
+		maior5 = valA5;
+			}
+		}
+		soma5 = maior5 +10;
+printf("A soma do maior valor digitado +10 eh: \n%d \n\n", soma5);
+	
+
+}
