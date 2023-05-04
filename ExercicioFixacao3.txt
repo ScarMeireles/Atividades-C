@@ -1,0 +1,186 @@
+#include <stdio.h>
+#include <math.h>
+
+int main (){
+	
+//Questão 01
+//	Faça um programa para uma loja de tintas. O programa deve pedir o tamanho em metros 
+//quadrados da área a ser pintada. Considere que a cobertura da tinta é de 1 litro para 
+//cada 3 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00.
+//Informe ao usuário a quantidade de latas de tinta a serem compradas e o preço total.
+
+#define LITROS_POR_METRO_QUADRADO 1.0/3.0
+#define LITROS_POR_LATA 18.0
+#define PRECO_POR_LATA 80.0
+
+float  area, litrosNecessarios, latasNecessarias, precoTotal; 
+printf ("Digite o tamanho em metros quadrados da area que sera pintada: \n");
+scanf("%f", &area);
+
+
+litrosNecessarios = ceil(area * LITROS_POR_METRO_QUADRADO);
+latasNecessarias = ceil(litrosNecessarios / LITROS_POR_LATA);
+precoTotal = latasNecessarias * PRECO_POR_LATA;
+
+printf("Voce precisa comprar %.0f lata(s) de tinta, ao custo total de R$ %.2f.\n\n", latasNecessarias, precoTotal);
+
+
+
+//Questão 02
+//Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um 
+//link de Internet (em Mbps), calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos).
+
+int tamanho, velocidade;
+float tempo;
+
+printf("Digite o tamanho do arquivo (Em MB) e a velocidade da internet (Em Mbps). Informarei o tempo aproximado de download.\n");
+scanf("%d", &tamanho);
+scanf("%d", &velocidade);
+
+tempo = (tamanho * 8 )/ velocidade;
+
+printf("O tempo gasto sera de: %.2f minuto(s)", tempo/60);
+printf (" ou %.2f segundo(s)\n\n", tempo);
+
+
+
+//Questão 03
+//Faça um Programa que peça um valor e mostre na tela se o valor é positivo ou negativo.
+
+int valor;
+printf("Insira um valor. Direi se ele eh positivo ou negativo\n");
+scanf("%d", &valor);
+	if(valor == 0){
+		printf("O valor eh nulo\n\n");
+	}
+		else if (valor > 0){
+			printf("O valor eh positivo!\n\n");
+		}
+			else{
+				printf("O valor eh negativo!\n\n");
+			}
+
+
+
+
+//Questão 04
+//Faça um programa que pergunte o preço de três produtos e informe qual produto você deve comprar, 
+//sabendo que a decisão é sempre pelo mais barato.
+
+float produto1, produto2, produto3;
+printf("Digite o preco de 3 produtos. Informarei o mais barato.\n");
+
+scanf("%f", &produto1);
+scanf("%f", &produto2);
+scanf("%f", &produto3);
+
+	if(produto1 < produto2 && produto1< produto3){
+		printf("Compre o produto 1\n\n");
+	}
+		else if(produto2 < produto1 && produto2 < produto3){
+			printf("Compre o produto 2\n\n");
+		}
+			else{
+				printf("Compre o produto 3\n\n");
+			}
+
+
+
+//Questão 05
+//Faça um Programa que pergunte em que turno você estuda. Peça para digitar M-matutino ou V-Vespertino ou N-Noturno.
+//Imprima a mensagem "Bom Dia!", "Boa Tarde!" ou "Boa Noite!" ou "Valor Inválido!", conforme o caso.
+
+char periodo, i;
+
+printf("Qual periodo voce estuda?\n");
+printf("M-matutino, V-Vespertino, N-Noturno.\n");
+scanf("%s", &periodo);
+
+ if(periodo == 'm' || periodo == 'M'){
+ 	printf("Bom Dia!!!\n\n");
+ }
+ 	else if(periodo == 'v' || periodo == 'V'){
+ 		printf("Boa Tarde!!!\n\n");
+	}
+		else if (periodo == 'n' || periodo == 'N'){	
+			printf("Boa Noite!!!\n\n");
+	}
+			else {
+				printf("Valor Invalido.\n\n");
+			}
+	
+	
+
+
+//Questão 06
+//Faça um Programa que leia um número e exiba o dia correspondente da semana. (1-Domingo, 2- Segunda, etc.), 
+//se digitar outro valor deve aparecer valor inválido.
+
+int dia;
+
+printf("Digite um numero. Mostrarei seu correspondente de acordo com o dia da semana.\n");
+scanf("%d", &dia);
+switch(dia){
+	case 1:
+		printf("Domingo!\n\n");
+		break;
+	case 2:
+		printf("Segunda-feira!\n\n");
+		break;
+	case 3:
+		printf("Terca-feira!\n\n");
+		break;
+	case 4:
+		printf("Quarta-feira!\n\n");
+		break;
+	case 5:
+		printf("Quinta-feira!\n\n");
+		break;
+	case 6:
+		printf("Sexta-Feira!\n\n");
+		break;
+	case 7:
+		printf("Sabado!\n\n");
+		break;
+	default:
+	printf("Valor Invalido!\n\n");
+}
+
+
+//Questão 07
+//Faça um Programa que peça os 3 lados de um triângulo. O programa deve informar se os valores podem ser um triângulo. 
+//Indique, caso os lados formem um triângulo, se o mesmo é: equilátero, isósceles ou escaleno.
+//Dicas: Três lados formam um triângulo quando a soma de quaisquer dois lados for maior que o terceiro; 
+//Triângulo Equilátero: três lados iguais; Triângulo Isósceles: dois lados iguais; Triângulo Escaleno: três lados diferentes;
+
+
+int lado1, lado2, lado3, ugabuga;
+
+printf("Digite o valor dos 3 lados do triangulo: \n");
+scanf("%d", &lado1);
+scanf("%d", &lado2);
+scanf("%d", &lado3);
+
+
+if (lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 +lado2){
+printf("Os valores dos lados podem formar um triangulo.\n\n");
+ugabuga = 1;
+}
+	else {
+	ugabuga = 0;
+	}
+
+
+if(ugabuga == 0){
+printf("Os valores dados nao podem formar um triangulo.\n\n");
+}
+	else if(lado1 == lado2 && lado2 == lado3){
+	printf("O triangulo eh Equilatero\n\n");
+	}
+	else if(lado1 != lado2 && lado2 != lado3 && lado3 != lado1){
+	printf("O triangulo eh Escaleno\n\n");
+	}
+	else{ 
+	printf("O triangulo eh Isosceles!\n\n");
+	}
+}
