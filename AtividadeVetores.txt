@@ -1,0 +1,145 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	
+setlocale(LC_ALL, "Portuguese");
+
+//01) Faça um algoritmo que leia 5 números inteiros, armazene em um vetor e posteriormente
+//imprima todos os 5 números.
+
+int i;
+int vetnum1[5];
+
+printf("Digite 5 números inteiros e eu mostrarei todos eles:\n");
+
+	for (i=0; i<5; i++){
+	scanf("%d", &vetnum1[i]);
+	}
+	
+	printf("\nOs valores digitados foram:\n");
+	for(i=0; i<5; i++){
+	printf("%d\n", vetnum1[i]);
+	}
+
+
+
+
+
+
+
+//02) Faça um algoritmo que leia 5 números inteiros, armazene em um vetor e posteriormente
+//imprima todos os 5 números. Imprima também a soma de todos eles.
+
+int soma=0;
+int vetnum2[5];
+
+printf("Digite 5 números inteiros e eu mostrarei todos eles:\n");
+
+	for (i=0; i<5; i++){
+	scanf("%d", &vetnum2[i]);
+	}
+	
+printf("\nOs valores digitados foram:\n");
+	
+	for(i=0; i<5; i++){
+	printf("%d\n", vetnum2[i]);
+	soma += vetnum2[i];
+	}
+	
+printf("A soma dos números é : %d\n", soma);
+	
+	
+
+
+
+//03) Faça um algoritmo que leia 6 idades, armazene em um vetor e posteriormente adicione 3
+//anos para cada idade digitada. Imprima as novas idades.
+
+int vetnum3[6];
+
+printf("Digite 6 idades e eu mostrarei as respectivas somadas a 3 anos:\n");
+
+	for (i=0; i<6;i++){
+	scanf("%d", &vetnum3[i]);
+	}
+
+printf("Em 3 anos, essas pessoas terão: \n");
+	for(i=0; i<6; i++){
+	printf("%d anos\n", vetnum3[i] + 3);
+}
+	
+
+
+
+//04) Faça um algoritmo que receba 5 números, armazene em um vetor. Posteriormente
+//armazene estes números em um segundo vetor somando o valor 2 para cada número.
+//Imprima os números armazenados no primeiro vetor e imprima o segundo vetor também.
+
+int vetnum4[5], vetnum4_1[5];
+
+printf ("Digite 5 números para serem armazenados e somados a 2: \n");
+	
+	for(i=0; i<5; i++){
+	scanf("%d", &vetnum4[i]);
+	vetnum4_1[i] = vetnum4[i] + 2;
+	}
+	
+	printf("Os valores armazenados são:\n");
+	for(i=0; i<5; i++){
+		if(i<3){
+		printf("%d, ", vetnum4[i]);
+		}
+		else if(i<4){
+		printf("%d ", vetnum4[i]);
+		}
+		else if(i=4){
+		printf("e %d.", vetnum4[i]);
+		}
+	}
+	
+	printf("\nSomados a 2, os valores são: \n");
+	for(i=0; i<5; i++){
+		if(i<3){
+		printf("%d, ", vetnum4_1[i]);
+		}
+		else if(i<4){
+		printf("%d ", vetnum4_1[i]);
+		}
+		else if(i=4){
+		printf("e %d.", vetnum4_1[i]);
+		}
+	}
+
+
+
+//05) Carregue dois vetores com 10 números inteiros cada. Gere um terceiro vetor
+//somando os elementos do primeiro vetor com o segundo vetor. Imprima o vetor
+//resultante.
+
+int vetnum5[10], vetnum5_1[10], vetnum5_2[10];
+
+printf("Digite 10 números para serem salvos no primeiro vetor: \n");
+for(i=0; i<10; i++){
+	scanf("%d", &vetnum5[i]);
+	}
+
+printf("Digite 10 números para serem salvos no segundo vetor: \n");
+	for(i=0; i<10; i++){
+	scanf("%d", &vetnum5_1[i]);
+	}
+
+printf("A soma dos valores dos vetores são: \n");
+	for(i=0; i<10; i++){
+	vetnum5_2[i] = vetnum5[i] + vetnum5_1[i];
+		if(i<8){
+		printf ("%d, ", vetnum5_2[i]);
+		}
+		else if( i<9){
+		printf("%d ", vetnum5_2[i]);
+		}
+		else if( i=9){
+		printf("e %d", vetnum5_2[i]);
+		}
+	}
+}
