@@ -54,12 +54,12 @@ printf("\nOs valores digitados foram:  ");
 		printf("%d ", vetnum2[i]);
 		}
 		else if(i=4){
-		printf("e %d\n", vetnum2[i]);
+		printf("e %d.\n", vetnum2[i]);
 		}
 	soma += vetnum2[i];
 	}
 	
-printf("Somados, os valores resultam em: %d\n\n", soma);
+printf("Somados, os valores resultam em: %d.\n\n", soma);
 
 
 
@@ -79,7 +79,7 @@ printf("Em 3 anos, essas pessoas terão: \n");
 		printf("%d anos,\n", vetnum3[i] + 3);
 		}
 		else if(i=5){
-		printf("e %d anos\n\n", vetnum3[i] + 3);
+		printf("e %d anos.\n\n", vetnum3[i] + 3);
 		}
 }
 	
