@@ -1,0 +1,156 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(){
+	
+setlocale(LC_ALL, "Portuguese");
+
+//01) Faça um Programa que leia um vetor de 10 caracteres, e diga quantas consoantes foram lidas. Imprima as consoantes.
+ 
+int quantConsoante=0, i;
+char vetchar[10], consoante[10];
+
+//vogal[0]= 'A', vogal[1]= 'a', vogal[2]= 'E', vogal[3]= 'e', vogal[4]= 'I', vogal[5]= 'i', vogal[6]= 'O', vogal[7]= 'o', vogal[8]= 'U', vogal[9]== 'u';
+
+printf("Digite 10 letras. Direi quantas e quais foram escritas.\n");
+
+for(i=0; i<10; i++){
+scanf(" %c", &vetchar[i]);	
+	
+	if(vetchar[i] != 'A' && vetchar[i] != 'a' && vetchar[i] != 'E' && vetchar[i] != 'e' && vetchar[i] != 'I' && vetchar[i] != 'i' && vetchar[i] != 'O' && vetchar[i] != 'o' && vetchar[i] != 'U' &&  vetchar[i] != 'u'){
+	consoante[i] = vetchar[i];
+	quantConsoante ++;
+	}
+}
+
+printf("Foram encontrados um total de %d consoante(s).\n", quantConsoante);
+
+if(quantConsoante > 0){
+printf("As consoantes encontradas foram: \n");
+	for(i=0; i<10; i++){
+		if(vetchar[i] != 'A' && vetchar[i] != 'a' && vetchar[i] != 'E' && vetchar[i] != 'e' && vetchar[i] != 'I' && vetchar[i] != 'i' && vetchar[i] != 'O' && vetchar[i] != 'o' && vetchar[i] != 'U' &&  vetchar[i] != 'u'){
+		printf("%c ", consoante[i]);
+		}
+	}
+}
+
+
+
+printf ("\n\n/--------------------------------------------------------------------------------------------/\n\n");
+
+
+
+//02) Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os números pares no vetor PAR e os números IMPARES no vetor ímpar. Imprima os três vetores.
+ 
+int vetAll[20], vetPar[20], vetImpar[20];
+
+printf("Digite 20 números. Mostrarei todos e separados em PARES e ÍMPARES. \n");
+
+for(i=0; i<20; i++){
+scanf("%d", &vetAll[i]);
+	if(vetAll[i]%2 == 0){
+	vetPar[i] = vetAll[i];	
+	}
+	else {
+	vetImpar[i] = vetAll[i];
+	}
+}
+
+printf("\nOs números digitados foram:\n");
+
+for(i=0; i<20; i++){
+	if(i < 18){
+	printf("%d, ", vetAll[i]);
+	}
+	else if(i < 19){
+	printf("%d ", vetAll[i]);
+	}
+	else if(i = 19){
+	printf("e %d.\n", vetAll[i]);
+	}
+}
+
+printf("\nOs números pares são: ");
+for(i=0; i<20; i++){
+	if(vetAll[i]%2 == 0){
+	printf("%d ", vetPar[i]);
+	}
+}
+
+printf("\nOs números ímpares são: ");
+for(i=0; i<20; i++){
+	if(vetAll[i]%2 != 0){
+	printf("%d ", vetImpar[i]);
+	}
+}
+
+
+printf ("\n\n/--------------------------------------------------------------------------------------------/\n\n");
+
+
+
+//03) Faça um Programa que peça as quatro notas de 10 alunos, calcule e armazene num vetor a média de cada aluno, imprima o número de alunos com média maior ou igual a 7.0.
+ 
+
+//Este exercício foi adiado pela professora devido a necessidade de utilização de matrizes, as quais ainda não foram lecionadas. 
+
+
+//04) Faça um Programa que leia um vetor de 5 números inteiros, mostre a soma, a multiplicação e os números.
+ 
+
+int vetnum4[5], soma, produto;
+
+soma = 0;
+produto = 1;
+
+printf("Digite 5 números. Será mostrado a soma e a multiplicação deles.\n");
+
+for(i=0; i<5; i++){
+	scanf("%d", &vetnum4[i]);
+	soma += vetnum4[i];
+	produto *= vetnum4[i];
+}
+
+printf ("Os números digitados foram: \n");
+for(i=0; i<5; i++){
+	if(i<3){
+	printf("%d, ", vetnum4[i]);
+	}
+	else if(i<4){
+	printf("%d ", vetnum4[i]);
+	}
+	else if(i=4){
+	printf("e %d \n", vetnum4[i]);
+	}
+}
+
+printf("A soma dos números é: %d \n", soma);
+printf("A multiplicação dos números é: %d \n", produto);
+
+ 
+ 
+printf ("\n\n/--------------------------------------------------------------------------------------------/\n\n");
+
+
+
+//05) Faça um Programa que peça a idade e altura de 5 pessoas, armazene cada informação no seu respectivo vetor. Imprima a idade e a altura na ordem inversa a ordem lida.
+
+int idade[5], altura[5], pessoa[5];
+
+printf("Digite a idade e altura de 5 pessoas. Serão mostradas em ordem inversa. \n");
+printf("Digite a altura em centímetros. \n");
+for(i=1; i<6; i++){
+	scanf("%d", &idade[i]);
+	scanf("%d", &altura[i]);
+}
+
+printf("As respectivas Idades e Alturas são: \n");
+
+for(i=5; i>0; i--){
+	printf("Pessoa %d: \n", i);
+	printf("Idade: %d \n", idade[i]);
+	printf("Altura: %d \n\n", altura[i]);
+}
+}
