@@ -94,7 +94,29 @@ printf ("\n\n/------------------------------------------------------------------
 //03) Faça um Programa que peça as quatro notas de 10 alunos, calcule e armazene num vetor a média de cada aluno, imprima o número de alunos com média maior ou igual a 7.0.
  
 
-//Este exercício foi adiado pela professora devido a necessidade de utilização de matrizes, as quais ainda não foram lecionadas. 
+int j, alunos;
+float vetAluno[10][4], media[10];
+
+printf("Digite a 4 notas para 10 alunos. Será impresso o número de alunos com média maior ou igual a 7.0. \n");
+
+for(i=1; i<6; i++){
+printf("Aluno %d: \nNotas: ", i);
+
+	for(j=0; j<4; j++){
+	scanf("%f", &vetAluno[i][j]);
+	media[i] += vetAluno[i][j];
+	}
+}
+
+for(i=1; i<6; i++){
+media[i] = media[i]/4;
+	if(media[i] >= 7){
+	alunos ++;
+	}
+}
+
+printf("Um total de %d alunos tiraram uma nota média maior do que 7.0. \n\n", alunos);
+} 
 
 
 //04) Faça um Programa que leia um vetor de 5 números inteiros, mostre a soma, a multiplicação e os números.
