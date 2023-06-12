@@ -1,0 +1,259 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(){
+setlocale(LC_ALL, "Portuguese");
+
+int i, j;
+
+//Questão 01
+//Uma academia deseja fazer um senso entre seus clientes para descobrir o mais alto, o mais baixo, a de maior peso e menor peso, 
+//para isto você deve fazer um programa que pergunte a cada um dos clientes da academia seu código, sua altura e seu peso.
+//O final da digitação de dados deve ser dado quando o usuário digitar 0 (zero) no campo código.
+//Ao encerrar o programa também deve ser informado os códigos e valores do cliente mais alto, do mais baixo, do de maior peso e de menor peso, 
+//além da média das alturas e dos pesos dos clientes.
+
+int cliente[5][3], alto[2], baixo[2], leve[2], pesado[2], mediaAltura=0, mediaPeso=0, qCliente=0;
+//cliente[i][0] = Código  &&  cliente[i][1] = Altura  &&  cliente[i][2] = Peso
+//altura/peso[0] = Código  &&  altura/peso[1] = Valor
+
+for(i=0; i<5; i++){
+printf("Digite seu código de cliente(Digite 0 para encerrar): \n");
+scanf("%d", &cliente[i][0]);
+
+	if(cliente[0][0] == 0){
+	break;
+	}
+		else if(i>0 & cliente[i][0] == 0){
+		break;
+		}
+		
+printf("Digite sua altura(em cm): ");
+scanf("%d", &cliente[i][1]);
+printf("Digite seu peso aproximado: ");
+scanf("%d", &cliente[i][2]);
+printf("\n");
+
+qCliente ++;
+}
+
+alto[1] = cliente[0][1];
+baixo[1] = cliente[0][1];
+leve[1] = cliente[0][2];
+pesado[1] = cliente[0][2];
+
+alto[0] = cliente[0][0];
+baixo[0] = cliente[0][0];
+leve[0] = cliente[0][0];
+pesado[0] = cliente[0][0];
+
+for(i=0; i < qCliente; i++){
+
+		
+	if(cliente[i][1] > alto[1]){
+	alto[0] = cliente[i][0];
+	alto[1] = cliente[i][1];
+	}
+		else if(cliente[i][1] < baixo[1]){
+		baixo[0] = cliente[i][0];
+		baixo[1] = cliente[i][1];
+		}
+	
+	if(cliente[i][2] > pesado[1]){
+	pesado[0] = cliente[i][0];
+	pesado[1] = cliente[i][2];
+
+	}
+		else if(cliente[i][2] < leve[1]){
+		leve[0] = cliente[i][0];
+		leve[1] = cliente[i][2];
+		}
+		
+	mediaAltura +=  cliente[i][1];
+	mediaPeso += cliente[i][2];
+}
+
+while(cliente[0][0] != 0){
+printf("O cliente mais alto é o de código %d, com a altura de: %dcms\n", alto[0], alto[1]);
+printf("O cliente mais baixo é o de código %d, com a altura de: %dcms \n", baixo[0], baixo[1]);
+printf("O cliente mais leve é o de código %d, com o peso de: %dkgs \n", leve[0], leve[1]);
+printf("O cliente mais pesado é o de código %d, com o peso de: %dkgs \n", pesado[0], pesado[1]);
+
+printf("A média das alturas é: %d\n", mediaAltura / qCliente);
+printf("A média dos pesos é: %d\n\n", mediaPeso / qCliente);
+
+break;
+}
+
+
+//Questão 02
+//Um funcionário de uma empresa recebe aumento salarial.
+//Sabe-se que: Esse funcionário foi contratado em 1995, com salário inicial de R$ 1.000,00; 
+//Em 1996 recebeu aumento de 1,5% sobre seu salário inicial; A partir de 1997 (inclusive),
+//os aumentos salariais sempre correspondem ao dobro do percentual do ano anterior.
+
+//Faça um programa que determine o salário atual desse funcionário. Após concluir isto, 
+//altere o programa permitindo que o usuário digite o salário inicial do funcionário.
+
+float salarioI, porcentagem, salario;
+
+porcentagem = 0.015;
+salario = 1000;
+
+printf ("O salário inicial era R$1000,00\n");
+
+for(i=1996; i<2024; i++){
+	salario +=  1000 * porcentagem;
+//	printf("porcentagem %.2f em %d \n", porcentagem, i);  //Usado para entender o que o programa está fazendo.
+//	printf("salario %.2f em %d \n\n", salario, i);       //Usado para entender o que o programa está fazendo.
+	porcentagem = porcentagem * 2;  				    //Acredita-se que multiplicar a porcentagem pelo dobro do ano anterior está incorreto.
+}
+printf ("Em 2023, o funcionário recebe R$%.2f \n\n", salario);
+
+
+printf("Digite um salário inicial: \n");
+scanf("%f", &salarioI);
+printf("O salário inicial era R$%.2f. \n", salarioI);
+
+salario = salarioI + salarioI * porcentagem;
+porcentagem = 0.015;
+
+for(i=1996; i<2024; i++){
+	salario += salarioI * porcentagem;
+//	printf("porcentagem %.2f em %d \n", porcentagem, i);  
+//	printf("salario %.2f em %d \n\n", salario, i);       
+	porcentagem = porcentagem * 2;   
+}
+printf ("Em 2023, o funcionário recebe R$%.2f \n", salario);
+
+
+
+//Questão 03
+//O cardápio de uma lanchonete é o seguinte: 
+//Especificação Código Preço:     
+//Cachorro Quente 100 R$ 1,20    Refrigerante 105 R$ 1,00
+//Bauru Simples 101 R$ 1,30      Bauru com ovo 102 R$ 1,50 
+//Hambúrguer 103 R$ 1,20         Cheeseburguer 104 R$ 1, 30 
+ 
+//Faça um programa que leia o código dos itens pedidos e conforme desejado.
+//Calcule e mostre o valor a ser pago por item (preço * quantidade) e o total geral do pedido.
+//Considere que o cliente deve informar quando o pedido deve ser encerrado.
+
+int codP=1;
+float valorTotal=0;
+
+printf("Digite um código correspondente ao pedido: \n\n");
+printf("Cachorro Quente = 100 - R$ 1,20    Hambúrguer = 103 - R$ 1,20 \n");
+printf("Bauru Simples = 101 - R$ 1,30      Cheeseburguer = 104 - R$ 1,30  \n");
+printf("Bauru com ovo = 102 - R$ 1,50      Refrigerante = 105 - R$ 1,00 \n");
+printf("Código 0 = Encerrar \n\n");
+
+
+while(codP != 0){
+scanf("%d", &codP);
+	switch (codP){
+		case 0:
+			printf("Pedido finalizado! \n");
+			break;
+
+		case 100:
+			printf("Cachorro Quente + R$ 1,20 \n");
+			valorTotal += 1.20;
+			break;
+	
+		case 101:
+			printf("Bauru Simples + R$ 1,30 \n");
+			valorTotal += 1.30;
+			break;
+	
+		case 102:
+			printf("Bauru com ovo + R$ 1,50 \n");
+			valorTotal += 1.50;
+			break;
+	
+		case 103:
+			printf("Hambúrguer + R$ 1,20 \n");
+			valorTotal += 1.20;
+			break;
+			
+		case 104:
+			printf("Cheeseburguer + R$ 1,30 \n");
+			valorTotal += 1.30;
+			break;	
+					
+		case 105:
+			printf("Refrigerante + R$ 1,00 \n");
+			valorTotal += 1.00;
+			break;
+			
+		default:
+			printf("Código Incorreto \n");
+			
+	}
+}
+printf("O valor total do pedido é: %.2f \n\n", valorTotal);
+
+
+
+//Questão 04
+//Faça um Programa que leia dois vetores com 10 elementos cada. Gere um terceiro vetor de 20 elementos, 
+//cujos valores devem ser compostos por elementos intercalados dos dois outros vetores.
+
+int vet1[] = {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
+int vet2[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
+int vetALL[20];
+
+printf("Digite 20 números. Eles serão mostrados de maneira intercalada \n");
+
+for(i=0; i<19; i++, i++){
+	scanf("%d", &vet1[i]);
+}
+for(i=1; i<20; i++, i++){
+	scanf("%d", &vet2[i]);
+}
+
+for(i=0; i<19; i++, i++){
+	vetALL[i] = vet1[i];
+}
+for(i=1; i<20; i++, i++){
+	vetALL[i] = vet2[i];
+}
+
+
+printf("De forma alternada, os números digitados são: \n");
+for(i=0; i<20; i++){
+printf("%d ", vetALL[i]);
+}
+
+
+
+//Questão 05
+//Foram anotadas como idades e alturas de 15 alunos. 
+//Faça um Programa que determina quantos alunos com mais de 13 anos possuem altura inferior à média de altura desses alunos .
+
+int aluno[3][2], mediaIdade=0, mediaAltura=0, qAlunos=0;
+//aluno[i][0] = Idade &&  aluno[i][1] = Altura
+
+for(i=1; i<16; i++){
+printf("Digite a idade do aluno %d \n", i);
+scanf("%d", &aluno[i][0]);	
+printf("Digite a altura do aluno %d \n", i);
+scanf("%d", &aluno[i][1]);
+printf("\n");
+}
+
+for(i=1; i < 16; i++){
+	mediaAltura +=  aluno[i][1];
+}
+printf("A média da altura dos alunos é: %d\n", mediaAltura / 15);
+
+for(i=1; i<16; i++){
+	if (aluno[i][0] > 13 && aluno[i][1] < mediaAltura / 15){
+	qAlunos++;
+	}
+}
+printf("Foram encontrados %d alunos com mais de 13 anos e com altura abaixo da média. \n\n", qAlunos);
+
+}
